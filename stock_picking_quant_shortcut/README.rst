@@ -1,0 +1,1 @@
+This module adds a smartbutton for accessing quants from stock pickings

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="stock_picking_quant_shortcut_form_view">
+            <field name="name">stock.picking.quant.shortcut.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form" />
+            <field name="arch" type="xml">
+                <div class="oe_right oe_button_box" position="inside">
+                    <button class="oe_stat_button" name="action_open_quants"
+                        icon="fa-archive" type="object"
+                        groups="stock.group_locations" string="Quants">
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</openerp>
