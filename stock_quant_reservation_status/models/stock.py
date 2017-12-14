@@ -15,13 +15,13 @@ class StockQuant(models.Model):
         self.is_reserved = bool(self.reservation_id)
         reserved_for = ''
         if self.reservation_id:
-            partner_name = self.reservation_id.picking_id.partner_id.name
-            picking_name = self.reservation_id.picking_id.name
+            partner_name = self.reservation_id.picking_id.partner_id.name or ''
+            picking_name = self.reservation_id.picking_id.name or ''
 
             if self.reservation_id.picking_id.sale_id:
-                origin = self.reservation_id.picking_id.sale_id.name
+                origin = self.reservation_id.picking_id.sale_id.name or ''
             else:
-                origin = self.reservation_id.picking_id.origin
+                origin = self.reservation_id.picking_id.origin or ''
 
             reserved_for = origin + '\n' + picking_name + '\n' + partner_name
 
