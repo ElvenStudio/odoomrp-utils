@@ -19,14 +19,11 @@ class StockQuant(models.Model):
             picking_name = self.reservation_id.picking_id.name
 
             if self.reservation_id.picking_id.sale_id:
-                reserved_for = self.reservation_id.picking_id.sale_id.name + '\n' + \
-                               (picking_name and picking_name + '\n') + \
-                               (partner_name and partner_name) or ''
+                origin = self.reservation_id.picking_id.sale_id.name
             else:
                 origin = self.reservation_id.picking_id.origin
-                reserved_for = (origin and origin + '\n') + \
-                               (picking_name and picking_name + '\n') + \
-                               (partner_name and partner_name) or ''
+
+            reserved_for = origin + '\n' + picking_name + '\n' + partner_name
 
         self.reserved_for = reserved_for
 
