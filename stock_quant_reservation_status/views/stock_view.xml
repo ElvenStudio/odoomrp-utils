@@ -9,7 +9,6 @@
                 <field name="company_id" position="after">
                     <field name="is_reserved" />
                     <field name="reserved_for" />
-                    <separator />
                 </field>
             </field>
         </record>
@@ -25,6 +24,7 @@
                         domain="[('is_reserved','=', True)]" />
                     <filter name="unreserved" string="Unreserved"
                         domain="[('is_reserved','=', False)]" />
+                    <separator />
                 </filter>
             </field>
         </record>
