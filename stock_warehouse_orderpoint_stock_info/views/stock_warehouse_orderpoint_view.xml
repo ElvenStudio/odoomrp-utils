@@ -8,6 +8,9 @@
             <field name="arch" type="xml">
                 <field name="product_max_qty" position="after">
                     <field name="product_location_qty" />
+                    <field name="product_location_qty_incoming" />
+                    <field name="product_location_qty_outgoing" />
+                    <field name="product_location_qty_virtual" />
                     <field name="available" invisible="1" />
                 </field>
             </field>
@@ -21,6 +24,9 @@
                 <group string="Rules" position="after">
                     <group string="Stock Info">
                         <field name="product_location_qty" />
+                        <field name="product_location_qty_incoming" />
+                        <field name="product_location_qty_outgoing" />
+                        <field name="product_location_qty_virtual" />
                     </group>
                 </group>
             </field>
